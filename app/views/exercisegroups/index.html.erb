@@ -1,0 +1,23 @@
+<div class="container">
+<div class="row">
+  <div class="col-md-6 col-sm-6 col-lg-6 offset-md-3 offset-3 offset-lg-3">
+    <h1>Select Your PR!</h1>
+</div>
+</div>
+
+
+<% @exercisegroups.in_groups_of(2, false).each_with_index do | groups, index| %>
+    <div class="list-group-horizontal">
+      <div class="row">
+      <% groups.each do | group | %>
+      <div class="col-md-6 col-sm-6 col-lg-6">
+        <%= link_to group, class: 'list-group-item list-group-item-action' do %>
+      <%= group.name %>
+      <% end %>
+    </div>
+  <% end %>
+</div>
+</br>
+</div>
+<% end %>
+</div>

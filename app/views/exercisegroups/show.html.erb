@@ -1,0 +1,14 @@
+<h1><%= @exercisegroup.name %></h1>
+</br>
+<%= form_for(Exerciselog.new) do |f| %>
+    <%= f.hidden_field :exercisegroup_id, :value => @exercisegroup.id  %>
+    <%= f.hidden_field :reps, :value => 1  %>
+    <%= f.text_field :weight, placeholder: "weight", class: "form-control", required: true %>
+    <%= f.submit "submit", class: "btn btn-default" %>
+  <% end %>
+</br>
+  <% @exercisegroup.exerciselog.each do |t| %>
+    <%=  t.weight %> </br>
+  <% end %>
+</br>
+<hr>
